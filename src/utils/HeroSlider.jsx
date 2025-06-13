@@ -426,26 +426,32 @@ export default function WeddingHeroSlider() {
                     >
                       {slide.title}
                     </Typography>
-                    <Typography
-                      className="slide-subtitle"
-                      variant="subtitle1"
-                      sx={{
-                        fontWeight: 300, ml: isMobile ? 2 : 3,
-                      }}
-                    >
-                      {slide.subtitle}
-                    </Typography>
-                    <Button
-                      className="slide-button"
-                      variant="contained"
-                      color="secondary"
-                      endIcon={<ArrowForward />}
-                      sx={{
-                        width: 'fit-content', mt: 1, ml: isMobile ? 2 : 3,
-                      }}
-                    >
-                      Learn More
-                    </Button>
+
+                    {
+                      !isMobile &&
+                      <>
+                        <Typography
+                          className="slide-subtitle"
+                          variant="subtitle1"
+                          sx={{
+                            fontWeight: 300, ml: isMobile ? 2 : 3,
+                          }}
+                        >
+                          {slide.subtitle}
+                        </Typography>
+                        <Button
+                          className="slide-button"
+                          variant="contained"
+                          color="secondary"
+                          endIcon={<ArrowForward />}
+                          sx={{
+                            width: 'fit-content', mt: 1, ml: isMobile ? 2 : 3,
+                          }}
+                        >
+                          Learn More
+                        </Button>
+                      </>
+                    }
                   </>
                 )}
               </Box>
