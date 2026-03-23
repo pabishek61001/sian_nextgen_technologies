@@ -30,17 +30,14 @@ const testimonials = [
 const Testimonials = () => {
     return (
         <div className="relative w-full overflow-hidden py-12">
-            {/* Gradient shadows */}
-            {/* <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none" /> */}
-            {/* <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none" /> */}
 
             {/* Row 1 */}
-            <div className="overflow-hidden whitespace-nowrap">
-                <div className="flex gap-6 animate-[marquee_20s_linear_infinite]">
+            <div className="overflow-hidden bg-gray-900 py-2 whitespace-nowrap">
+                <div className="flex gap-6 py-2 animate-[marquee_10s_linear_infinite]">
                     {[...testimonials, ...testimonials].map((item, index) => (
                         <div
                             key={`row1-${index}`}
-                            className=" min-w-[400px] max-w-xs bg-white/10 backdrop-blur-md text-white p-5 rounded-xl shadow-md"
+                            className=" min-w-[400px] max-w-xs  bg-white/10 backdrop-blur-md text-white p-5 rounded-xl shadow-md"
                         >
                             <div className="flex items-center gap-3 mb-3 ">
                                 <img
@@ -60,12 +57,12 @@ const Testimonials = () => {
             </div>
 
             {/* Row 2 - reverse scroll */}
-            <div className="overflow-hidden whitespace-nowrap mt-8">
-                <div className="flex gap-6 animate-[marqueeReverse_20s_linear_infinite]">
+            <div className="overflow-hidden bg-gray-900 py-2 whitespace-nowrap mt-2">
+                <div className="flex gap-6 py-2 animate-[marqueeReverse_20s_linear_infinite]">
                     {[...testimonials, ...testimonials].map((item, index) => (
                         <div
                             key={`row2-${index}`}
-                            className="min-w-[400px] max-w-xs bg-white/10 backdrop-blur-md text-white p-5 rounded-xl shadow-md"
+                            className=" min-w-[400px] max-w-xs  bg-white/10 backdrop-blur-md text-white p-5 rounded-xl shadow-md"
                         >
                             <div className="flex items-center gap-3 mb-3">
                                 <img

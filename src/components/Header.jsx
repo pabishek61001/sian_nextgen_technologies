@@ -78,7 +78,7 @@ const Header = () => {
 
 
     const drawer = (
-        <Box sx={{ textAlign: 'center', bgcolor: "primary.dark", color: "white", height: "100%" }}>
+        <Box sx={{ textAlign: 'center', bgcolor: "white", color: "black", height: "100%" }}>
             <Box
                 sx={{
                     display: 'flex',
@@ -88,8 +88,8 @@ const Header = () => {
                     py: 2,
                 }}
             >
-                <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'white' }}>
-                    IG Enterprises
+                <Typography variant="h6" sx={{ fontWeight: 'bold', }}>
+                    SIAN NEXTGEN
                 </Typography>
                 <IconButton
                     edge="end"
@@ -97,7 +97,6 @@ const Header = () => {
                         e.stopPropagation();
                         setMobileOpen(false);
                     }}
-                    sx={{ color: 'white', }}
                 >
                     <Close />
                 </IconButton>
@@ -118,7 +117,7 @@ const Header = () => {
 
 
     return (
-        <>
+        <div >
             {/* Slide-aware AppBar */}
             <HideOnScroll>
                 <AppBar
@@ -126,7 +125,9 @@ const Header = () => {
                     // position="fixed"
                     color="inherit"
                     elevation={0}
-                    sx={{ bgcolor: show ? '#053d6b' : 'transparent', }}
+                    sx={{
+                        bgcolor: show && location.pathname !== '/' ? '#053d6b' : 'white',
+                    }}
                 >
                     <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', }}>
                         <Typography
@@ -135,15 +136,14 @@ const Header = () => {
                             href="/"
                             sx={{
                                 textDecoration: 'none',
-                                color: 'whitesmoke',
+                                color: location.pathname !== '/' ? 'whitesmoke' : "black",
                                 fontWeight: 'bold',
                                 fontSize: '1.5rem',
                             }}
                         >
-                            IGE
+                            SIAN
                         </Typography>
 
-                        {/* <img src='https://www.tcs.com/content/dam/global-tcs/en/images/home/tcs-logo-1.svg' /> */}
 
 
                         {/* Desktop Menu */}
@@ -155,8 +155,8 @@ const Header = () => {
                                     to={item.href}
                                     sx={{
                                         fontSize: "0.9rem",
-                                        color: 'white',
-                                        '&:hover': { color: 'white', },
+                                        color: show && location.pathname !== '/' ? 'white' : 'black',
+                                        // '&:hover': { color: 'black', bgcolor: "#006cc52e" },
                                     }}
                                 >
                                     {item.label}
@@ -197,7 +197,7 @@ const Header = () => {
 
             {/* Placeholder Toolbar to offset fixed AppBar */}
             < Toolbar />
-        </>
+        </div>
     );
 };
 

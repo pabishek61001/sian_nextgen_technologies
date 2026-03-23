@@ -10,6 +10,8 @@ import Platforms from '../utils/Platforms';
 import Footer from '../components/Footer';
 import Testimonials from '../utils/Testimonials';
 import OurTeam from '../components/OurTeam';
+import HeroSection1 from '../utils/HeroSection1';
+import HeroSection2 from '../utils/HeroSection2';
 
 
 const slides = [
@@ -33,17 +35,18 @@ const slides = [
 
 const LandingPage = () => {
     return (
-        <Box>
+        <Box >
 
             <Header />
-            <HeroSlider slides={slides} options={{ loop: false }} />
+            {/* <HeroSlider slides={slides} options={{ loop: false }} /> */}
+            <HeroSection2 />
             <AboutSection />
             <TransformingBusiness />
             <ServiceSection />
-            <AllServices />
+            {/* <AllServices /> */}
             <Platforms />
             <Testimonials />
-            <OurTeam />
+            {/* <OurTeam /> */}
             <Footer />
         </Box>
     )

@@ -21,9 +21,9 @@ import { Computer, GroupAdd, Hotel, ImportExport, InfoSharp, Work } from '@mui/i
 const tabCategories = [
     { id: 1, title: 'IT Solutions', icon: <Computer fontSize="medium" color="primary" /> },
     { id: 2, title: 'R&D and Training', icon: <Work fontSize="medium" color="primary" /> },
-    { id: 3, title: 'Labour Supply Under Contract', icon: <GroupAdd fontSize="medium" color="primary" /> },
-    { id: 4, title: 'Global Trading', icon: <ImportExport fontSize="medium" color="primary" /> },
-    { id: 5, title: 'Hospitality Services', icon: <Hotel fontSize="medium" color="primary" /> },
+    // { id: 3, title: 'Labour Supply Under Contract', icon: <GroupAdd fontSize="medium" color="primary" /> },
+    // { id: 4, title: 'Global Trading', icon: <ImportExport fontSize="medium" color="primary" /> },
+    // { id: 5, title: 'Hospitality Services', icon: <Hotel fontSize="medium" color="primary" /> },
 ];
 
 // Sample services for each tab (you can replace the others later)
@@ -83,27 +83,27 @@ const servicesMap = {
             description: "Guided mentorship to help shape early-stage ideas into scalable innovations or startup ventures.",
         },
     ],
-    3: [
-        { id: 1, title: 'Deliver Skilled Workforce', description: 'We carefully vet and provide qualified personnel across various industries, ensuring they have the expertise and experience needed for your specific projects.        ' },
-        { id: 2, title: 'Ensure Timely Deployment', description: 'We understand the importance of meeting project deadlines. Our efficient recruitment and deployment process guarantees that your workforce demands are fulfilled promptly without compromising quality.' },
-        { id: 3, title: 'Maintain Compliance & Safety', description: ' We adhere strictly to industry standards, labour laws, and safety regulations, ensuring that all contract workers meet legal requirements and maintain a safe working environment.' },
-        { id: 4, title: 'Flexible Staffing Solutions', description: 'Whether you need workers for a few days, weeks, or months, we tailor our labour supply services to align perfectly with your business timelines and budget.' },
-        { id: 5, title: 'Ongoing Support & Management', description: 'Our team provides continuous support and management for all contract labour, handling payroll, documentation, and any issues that arise during the contract period.' },
-    ],
-    4: [
-        { id: 1, title: 'Documentation & Compliance', description: 'We manage all essential trade documentation and ensure compliance with international regulations to avoid delays and penalties.' },
-        { id: 2, title: 'Shipment Tracking & Management', description: 'Stay informed with real-time tracking and updates on your cargo, from origin to destination.' },
-        { id: 3, title: 'Customs Clearance Support', description: ' Our knowledgeable team works closely with customs authorities to facilitate swift clearance of your goods.' },
-        { id: 4, title: 'Logistics Coordination', description: 'We coordinate with trusted freight forwarders, carriers, and warehouses to optimize shipping routes and reduce costs.' },
-        { id: 5, title: 'Risk Management', description: 'We identify potential risks in your supply chain and implement strategies to mitigate disruptions.' },
-    ],
-    5: [
-        { id: 1, title: 'Reservation & Booking Management', description: 'Simplify bookings with integrated systems that handle online reservations, cancellations, and room assignments effortlessly.' },
-        { id: 2, title: 'Guest Services & CRM', description: 'Enhance guest satisfaction with personalized services, loyalty programs, and effective communication tools.' },
-        { id: 3, title: 'Billing & Payment Processing', description: ' Secure and seamless billing solutions that handle multiple payment methods, invoicing, and financial reporting.' },
-        { id: 4, title: 'Operational Efficiency', description: 'Tools to manage housekeeping, maintenance, staff scheduling, and inventory, ensuring smooth day-to-day operations' },
-        { id: 5, title: 'Analytics & Reporting', description: 'Gain insights into occupancy rates, revenue trends, and guest preferences to make informed business decisions.' },
-    ],
+    // 3: [
+    //     { id: 1, title: 'Deliver Skilled Workforce', description: 'We carefully vet and provide qualified personnel across various industries, ensuring they have the expertise and experience needed for your specific projects.        ' },
+    //     { id: 2, title: 'Ensure Timely Deployment', description: 'We understand the importance of meeting project deadlines. Our efficient recruitment and deployment process guarantees that your workforce demands are fulfilled promptly without compromising quality.' },
+    //     { id: 3, title: 'Maintain Compliance & Safety', description: ' We adhere strictly to industry standards, labour laws, and safety regulations, ensuring that all contract workers meet legal requirements and maintain a safe working environment.' },
+    //     { id: 4, title: 'Flexible Staffing Solutions', description: 'Whether you need workers for a few days, weeks, or months, we tailor our labour supply services to align perfectly with your business timelines and budget.' },
+    //     { id: 5, title: 'Ongoing Support & Management', description: 'Our team provides continuous support and management for all contract labour, handling payroll, documentation, and any issues that arise during the contract period.' },
+    // ],
+    // 4: [
+    //     { id: 1, title: 'Documentation & Compliance', description: 'We manage all essential trade documentation and ensure compliance with international regulations to avoid delays and penalties.' },
+    //     { id: 2, title: 'Shipment Tracking & Management', description: 'Stay informed with real-time tracking and updates on your cargo, from origin to destination.' },
+    //     { id: 3, title: 'Customs Clearance Support', description: ' Our knowledgeable team works closely with customs authorities to facilitate swift clearance of your goods.' },
+    //     { id: 4, title: 'Logistics Coordination', description: 'We coordinate with trusted freight forwarders, carriers, and warehouses to optimize shipping routes and reduce costs.' },
+    //     { id: 5, title: 'Risk Management', description: 'We identify potential risks in your supply chain and implement strategies to mitigate disruptions.' },
+    // ],
+    // 5: [
+    //     { id: 1, title: 'Reservation & Booking Management', description: 'Simplify bookings with integrated systems that handle online reservations, cancellations, and room assignments effortlessly.' },
+    //     { id: 2, title: 'Guest Services & CRM', description: 'Enhance guest satisfaction with personalized services, loyalty programs, and effective communication tools.' },
+    //     { id: 3, title: 'Billing & Payment Processing', description: ' Secure and seamless billing solutions that handle multiple payment methods, invoicing, and financial reporting.' },
+    //     { id: 4, title: 'Operational Efficiency', description: 'Tools to manage housekeeping, maintenance, staff scheduling, and inventory, ensuring smooth day-to-day operations' },
+    //     { id: 5, title: 'Analytics & Reporting', description: 'Gain insights into occupancy rates, revenue trends, and guest preferences to make informed business decisions.' },
+    // ],
 };
 
 // Styled components

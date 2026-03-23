@@ -1,70 +1,65 @@
-import { Box, Grid, Typography } from '@mui/material';
-
-
 export default function AboutSection() {
     return (
-        <Box
-            sx={{
-                py: 10,
-                px: { xs: 3, md: 10 },
-                backgroundColor: '#fff',
-                color: 'black',
-                width: '100%',
-                // borderRadius: 3,
-                placeSelf: "center"
-            }}
-        >
-            <Grid
-                container
-                spacing={{ xs: 4, md: 6 }}
-                columns={{ xs: 1, sm: 1, md: 12 }}
-                alignItems="center"
-                justifyContent="center"
-            >
-                <Grid size={{ xs: 12, md: 6 }}>
-                    <Typography
-                        variant="h4"
-                        gutterBottom
-                        color='primary'
-                        sx={{ fontWeight: 'bold', mb: 3 }}
-                        data-aos='fade-up'
-                    >
+        <section className="max-w-7xl mx-auto py-20 px-6 md:px-12">
+
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+
+                {/* TEXT CONTENT */}
+                <div>
+
+                    <p className="text-blue-600 font-semibold tracking-[3px] uppercase text-sm mb-3">
                         About Our Company
-                    </Typography>
+                    </p>
 
-                    <Typography
-                        data-aos='fade-up'
-                        variant="body1"
-                        sx={{ color: 'text.secondary', lineHeight: 1.8, mb: 2 }}
-                    >
-                        We are a passionate team of creatives, designers, and developers dedicated
-                        to building impactful digital experiences. With a focus on innovation and
-                        collaboration, we help businesses bring their vision to life with cutting-edge
-                        technology and clean design.
-                    </Typography>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Driving Innovation Through Technology & Intelligence
+                    </h2>
 
-                    <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }} data-aos='fade-up'>
-                        Whether you're launching a startup, revamping a brand, or scaling up, we craft
-                        custom solutions tailored to your goals.
-                    </Typography>
-                </Grid>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                        SIAN Next Gen Technologies is a forward-thinking technology company focused on building modern digital solutions powered by software engineering, artificial intelligence, and data-driven systems. Our team combines technical expertise with innovative thinking to create scalable platforms that help businesses grow and adapt in a fast-changing digital world.
+                    </p>
 
-                <Grid size={{ xs: 12, md: 6 }}>
-                    <Box
-                        data-aos='fade-up'
-                        component="img"
-                        src="https://img.freepik.com/free-photo/guy-shows-document-girl-group-young-freelancers-office-have-conversation-working_146671-13569.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740"
-                        alt="Company Team"
-                        sx={{
-                            width: '100%',
-                            borderRadius: 3,
-                            boxShadow: 0,
-                            objectFit: 'cover',
-                            height: { xs: 280, md: 300 },
-                        }}
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                        We specialize in high-performance web applications, cloud platforms, mobile apps, and AI-powered solutions that improve efficiency and user experience. From product design to deployment, we deliver intelligent technology solutions that support long-term business success.
+                    </p>
+
+                    {/* STATS */}
+                    <div className="grid grid-cols-3 gap-6 mt-8">
+
+                        <div>
+                            <h3 className="text-3xl font-bold text-blue-600">10+</h3>
+                            <p className="text-sm text-gray-500">Digital Platforms</p>
+                        </div>
+
+                        <div>
+                            <h3 className="text-3xl font-bold text-blue-600">AI</h3>
+                            <p className="text-sm text-gray-500">Powered Solutions</p>
+                        </div>
+
+                        <div>
+                            <h3 className="text-3xl font-bold text-blue-600">Global</h3>
+                            <p className="text-sm text-gray-500">Technology Services</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {/* IMAGE */}
+                <div className="relative">
+
+                    <div className="absolute -top-6 -left-6 w-40 h-40 bg-blue-100 rounded-full blur-2xl opacity-40"></div>
+
+                    <img
+                        src="https://images.pexels.com/photos/115655/pexels-photo-115655.jpeg"
+                        alt="Technology Team"
+                        className="w-full h-[380px] object-cover rounded-2xl"
                     />
-                </Grid>
-            </Grid>
-        </Box>
+
+                </div>
+
+            </div>
+
+        </section>
     );
 }

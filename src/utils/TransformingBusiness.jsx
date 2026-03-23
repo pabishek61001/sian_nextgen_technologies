@@ -10,8 +10,8 @@ import { NavLink } from 'react-router-dom';
 const slides = [
     { id: 1, image: 'https://img.freepik.com/free-photo/close-up-business-partners-shaking-hands_23-2147972923.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740', title: 'IT Solutions', slug: '/services/it-solutions' },
     { id: 2, image: 'https://img.freepik.com/free-photo/business-partners-working-office_273609-6540.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740', title: 'R&D And Training', slug: '/services/R&D-and-Training' },
-    { id: 3, image: 'https://img.freepik.com/free-photo/picture-two-young-businessmen-talking-station-holding-tablet_176420-6242.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740', title: 'Labour Supply Under Contract', slug: '/services/labour-supply-under-contract' },
-    { id: 4, image: 'https://img.freepik.com/free-photo/two-businesspeople-discussing-details-contract_1163-3971.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740', title: 'Global Trading', slug: '/services/global-trading' },
+    { id: 3, image: 'https://img.freepik.com/free-photo/picture-two-young-businessmen-talking-station-holding-tablet_176420-6242.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740', title: 'Software-as-a-Service ', slug: '/services/labour-supply-under-contract' },
+    { id: 4, image: 'https://img.freepik.com/free-photo/two-businesspeople-discussing-details-contract_1163-3971.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740', title: 'Artificial Intelligence & Data Science ', slug: '/services/global-trading' },
     { id: 41, image: 'https://img.freepik.com/free-photo/close-up-business-partners-shaking-hands_23-2147972923.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740', title: 'Hospitality Services', slug: '/services/hospitality-services' },
 ];
 
@@ -20,7 +20,10 @@ export default function TransformingBusiness() {
     const splideRef = useRef(null);
 
     return (
-        <Box sx={{ px: { xs: 2, md: 8 }, py: 6, backgroundColor: 'transparent', color: "white", overflow: "hidden" }}>
+        <Box
+            maxWidth='lg'
+            mx='auto'
+            sx={{ px: { xs: 2, md: 2 }, py: 6, backgroundColor: 'transparent', color: "white", overflow: "hidden" }}>
 
 
             <Grid container spacing={2} alignItems="center" justifyContent="space-between" mb={3}>
@@ -107,7 +110,7 @@ export default function TransformingBusiness() {
                 ref={splideRef}
                 options={{
                     type: 'loop',
-                    perPage: 3,
+                    perPage: 4,
                     perMove: 1,
                     gap: '1rem',
                     breakpoints: {
@@ -146,12 +149,12 @@ export default function TransformingBusiness() {
                                                 left: 0,
                                                 width: '100%',
                                                 height: '100%',
-                                                backgroundColor: '#0b3456ed',
+                                                backgroundColor: 'black',
                                                 WebkitMaskImage: `radial-gradient(
                                               circle at bottom,
-                                              rgba(0, 0, 0, 1) 20%,
-                                              rgba(0, 0, 0, 0.99) 30%,
-                                              rgba(0, 0, 0, 0) 90%
+                                              rgba(0, 0, 0, 1) 5%,
+                                              rgba(0, 0, 0, 0) 100%,
+                                              rgba(0, 0, 0, 0) 10%
                                             )`,
                                                 WebkitMaskRepeat: 'no-repeat',
                                                 WebkitMaskSize: 'cover',
