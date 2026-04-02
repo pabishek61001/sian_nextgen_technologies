@@ -1,91 +1,158 @@
 // Footer.js
 import React from 'react';
-import { Box, Container, Grid, Typography, Link, IconButton, Button, Stack } from '@mui/material';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import { Mail, Phone } from '@mui/icons-material';
+import { Box, Container, Grid, Typography, Link, Stack, Divider, IconButton } from '@mui/material';
+import { Mail, Phone, LocationOn, LinkedIn, Twitter, Instagram, GitHub } from '@mui/icons-material';
 
 const Footer = () => {
+    const colors = {
+        deepBlue: "#041e35",
+        brandBlue: "#053d6b",
+        accentBlue: "#4fc3f7",
+        textMuted: "#b0bec5",
+    };
+
+    const linkStyle = {
+        color: colors.textMuted,
+        fontSize: "0.9rem",
+        textDecoration: "none",
+        transition: "all 0.3s ease",
+        "&:hover": {
+            color: colors.accentBlue,
+            transform: "translateX(5px)",
+        },
+    };
+
     return (
-        <Box sx={{ bgcolor: "#053d6b", color: '#fff', py: 6, mt: 10 }}>
-            <Container maxWidth="lg">
-                <Grid container spacing={4} >
-                    {/* Company Info */}
-                    <Grid size={{ xs: 12, md: 3 }}>
-                        <Typography variant="h6" fontWeight="bold" gutterBottom>
-                            IG Enterprises
+        <Box
+            component="footer"
+            sx={{
+                background: `linear-gradient(135deg, ${colors.deepBlue} 0%, ${colors.brandBlue} 100%)`,
+                color: '#ffffff',
+                pt: { xs: 10, md: 12 },
+                pb: 6,
+                mt: 10,
+                position: "relative",
+                overflow: "hidden",
+                // Subtle background glow for "Blue Mix" feel
+                "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    top: "20%",
+                    left: "10%",
+                    width: "300px",
+                    height: "300px",
+                    background: colors.accentBlue,
+                    filter: "blur(150px)",
+                    opacity: 0.05,
+                    zIndex: 0
+                }
+            }}
+        >
+            <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+                <Grid container spacing={8} sx={{ display: "flex", justifyContent: "space-evenly" }}>
+
+                    {/* Column 1: Brand & Bio */}
+                    <Grid size={{ xs: 12, md: 4 }}>
+                        <Typography variant="h5" sx={{ fontWeight: "900", mb: 3, letterSpacing: "-1px" }}>
+                            IG<span style={{ color: colors.accentBlue }}> Enterprises</span>
                         </Typography>
-                        <Typography variant="body2" sx={{ opacity: 0.8, color: "textSecondary" }}>
-                            Delivering top-notch digital solutions tailored for your business growth. Let's build something great together.
+                        <Typography variant="body2" sx={{ color: colors.textMuted, lineHeight: 1.8, mb: 4 }}>
+                            Innovating at the intersection of design and technology. We provide high-end full-stack solutions and AI-driven systems to help your corporate brand lead the digital era.
                         </Typography>
+                        {/* <Stack direction="row" spacing={1}>
+                            {[LinkedIn, Twitter, Instagram, GitHub].map((Icon, i) => (
+                                <IconButton
+                                    key={i}
+                                    sx={{
+                                        color: colors.textMuted,
+                                        bgcolor: "rgba(255,255,255,0.03)",
+                                        "&:hover": { color: colors.accentBlue, bgcolor: "rgba(79, 195, 247, 0.1)" }
+                                    }}
+                                >
+                                    <Icon fontSize="small" />
+                                </IconButton>
+                            ))}
+                        </Stack> */}
                     </Grid>
 
-                    {/* Navigation Links */}
-                    <Grid size={{ xs: 12, sm: 2 }}>
-                        <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
-                            Products
-                        </Typography>
-                        <Link style={{ color: "#cdd8e1", fontSize: "0.9rem", marginBottom: "5px" }} href="#" color="inherit" underline="hover" display="block">Web App</Link>
-                        <Link style={{ color: "#cdd8e1", fontSize: "0.9rem", marginBottom: "5px" }} href="#" color="inherit" underline="hover" display="block">Mobile App</Link>
-                        <Link style={{ color: "#cdd8e1", fontSize: "0.9rem", marginBottom: "5px" }} href="#" color="inherit" underline="hover" display="block">AI Tools</Link>
+                    {/* Column 2: Navigation & Services */}
+                    <Grid size={{ xs: 12, md: 4 }} sx={{ display: "flex", width: "100%", justifyContent: { xs: 'start', md: "center" } }}>
+                        <Grid container spacing={2}>
+                            <Grid size={12}>
+                                <Typography variant="subtitle1" sx={{ fontWeight: "700", mb: 3 }}>Navigation</Typography>
+                                <Stack spacing={2}>
+                                    <Link href="/" sx={linkStyle}>Home</Link>
+                                    <Link href="/about" sx={linkStyle}>About Us</Link>
+                                    <Link href="/why-us" sx={linkStyle}>Why Choose Us</Link>
+                                    <Link href="/contact" sx={linkStyle}>Contact</Link>
+                                </Stack>
+                            </Grid>
+                            {/* <Grid size={6}>
+                                <Typography variant="subtitle1" sx={{ fontWeight: "700", mb: 3 }}>Expertise</Typography>
+                                <Stack spacing={2}>
+                                    <Link href="#" sx={linkStyle}>Web Apps</Link>
+                                    <Link href="#" sx={linkStyle}>E-Commerce</Link>
+                                    <Link href="#" sx={linkStyle}>Cloud Tech</Link>
+                                    <Link href="#" sx={linkStyle}>AI Systems</Link>
+                                </Stack>
+                            </Grid> */}
+                        </Grid>
                     </Grid>
 
-                    <Grid size={{ xs: 12, sm: 2 }}>
-                        <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
-                            Company
-                        </Typography>
-                        <Link style={{ color: "#cdd8e1", fontSize: "0.9rem", marginBottom: "5px" }} href="#" color="inherit" underline="hover" display="block">About</Link>
-                        <Link style={{ color: "#cdd8e1", fontSize: "0.9rem", marginBottom: "5px" }} href="#" color="inherit" underline="hover" display="block">Careers</Link>
-                        <Link style={{ color: "#cdd8e1", fontSize: "0.9rem", marginBottom: "5px" }} href="#" color="inherit" underline="hover" display="block">Contact</Link>
-                        <Link style={{ color: "#cdd8e1", fontSize: "0.9rem", marginBottom: "5px" }} href="#" color="inherit" underline="hover" display="block">Help Center</Link>
-                        <Link style={{ color: "#cdd8e1", fontSize: "0.9rem", marginBottom: "5px" }} href="#" color="inherit" underline="hover" display="block">Privacy Policy</Link>
-                        <Link style={{ color: "#cdd8e1", fontSize: "0.9rem", marginBottom: "5px" }} href="#" color="inherit" underline="hover" display="block">Terms & Conditions</Link>
-                    </Grid>
-
-                    <Grid size={{ xs: 12, sm: 3 }}>
-                        <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
-                            Support
-                        </Typography>
-                        <Stack direction='row' sx={{ mb: 2 }}>
-                            <Mail sx={{ color: "#cdd8e1", fontSize: "0.9rem", mr: 1 }} />
-                            <Link style={{ color: "#cdd8e1", fontSize: "0.9rem", }} href="#" color="inherit" underline="hover" display="inline-block">i.g.enterprisespdy@gmail.com</Link>
-                        </Stack>
-                        <Stack direction='row' sx={{ mb: 2 }}>
-                            <Phone sx={{ color: "#cdd8e1", fontSize: "0.9rem", mr: 1 }} />
-                            <Link style={{ color: "#cdd8e1", fontSize: "0.9rem", }} href="#" color="inherit" underline="hover" display="inline-block">+91 9999999999</Link>
-                        </Stack>
-                    </Grid>
-
-                    {/* Social Media */}
-                    <Grid size={{ xs: 12, sm: 6, md: 2 }}>
-                        <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
-                            Follow Us
-                        </Typography>
-                        <Box>
-                            <IconButton href="#" color="inherit" size="small">
-                                <FacebookIcon />
-                            </IconButton>
-                            <IconButton href="#" color="inherit" size="small">
-                                <TwitterIcon />
-                            </IconButton>
-                            <IconButton href="#" color="inherit" size="small">
-                                <LinkedInIcon />
-                            </IconButton>
-                            <IconButton href="#" color="inherit" size="small">
-                                <InstagramIcon />
-                            </IconButton>
+                    {/* Column 3: Contact Glassmorphism Card */}
+                    <Grid size={{ xs: 12, md: 4 }}>
+                        <Box sx={{
+                            p: 4,
+                            borderRadius: 4,
+                            bgcolor: "rgba(255, 255, 255, 0.03)",
+                            border: "1px solid rgba(255, 255, 255, 0.08)",
+                            backdropFilter: "blur(10px)"
+                        }}>
+                            <Typography variant="subtitle1" sx={{ fontWeight: "700", mb: 3 }}>Let's Connect</Typography>
+                            <Stack spacing={3}>
+                                <Stack direction="row" spacing={2} alignItems="center">
+                                    <Mail sx={{ color: colors.accentBlue, fontSize: 20 }} />
+                                    <Box>
+                                        <Typography variant="caption" sx={{ color: colors.textMuted, display: "block" }}>Project Inquiries</Typography>
+                                        <Typography variant="body2" fontWeight="600">siannextgen@gmail.com</Typography>
+                                    </Box>
+                                </Stack>
+                                <Stack direction="row" spacing={2} alignItems="center">
+                                    <Phone sx={{ color: colors.accentBlue, fontSize: 20 }} />
+                                    <Box>
+                                        <Typography variant="caption" sx={{ color: colors.textMuted, display: "block" }}>Support Line</Typography>
+                                        <Typography variant="body2" fontWeight="600">+91 9944266255</Typography>
+                                    </Box>
+                                </Stack>
+                                {/* <Stack direction="row" spacing={2} alignItems="center">
+                                    <LocationOn sx={{ color: colors.accentBlue, fontSize: 20 }} />
+                                    <Box>
+                                        <Typography variant="caption" sx={{ color: colors.textMuted, display: "block" }}>Location</Typography>
+                                        <Typography variant="body2" fontWeight="600">Tech Hub, India</Typography>
+                                    </Box>
+                                </Stack> */}
+                            </Stack>
                         </Box>
                     </Grid>
                 </Grid>
 
-                {/* Bottom Line */}
-                <Box sx={{ bgcolor: "#053d6b", color: '#fff', }} mt={5} textAlign="center" borderTop="1px solid rgba(255,255,255,0.2)" pt={3}>
-                    <Typography variant="body2" sx={{ opacity: 0.7 }}>
+                <Divider sx={{ my: 6, borderColor: "rgba(255, 255, 255, 0.05)" }} />
+
+                {/* Bottom Bar */}
+                <Stack
+                    direction={{ xs: "column", sm: "row" }}
+                    justifyContent="space-between"
+                    alignItems="center"
+                    spacing={2}
+                >
+                    <Typography variant="caption" sx={{ color: colors.textMuted }}>
                         © {new Date().getFullYear()} IG Enterprises. All rights reserved.
+                        {/* <Link href="#" sx={{ ml: 2, color: "inherit", textDecoration: "none" }}>Privacy Policy</Link> */}
                     </Typography>
-                </Box>
+                    <Typography variant="caption" sx={{ color: colors.textMuted, fontStyle: "italic" }}>
+                        Designed with precision for the modern enterprise.
+                    </Typography>
+                </Stack>
             </Container>
         </Box>
     );
