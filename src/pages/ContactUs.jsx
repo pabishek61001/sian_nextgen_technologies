@@ -16,7 +16,7 @@ const ContactUs = () => {
                 width="100%"
                 sx={{
                     background: '#fafafa',
-                    py: { xs: 6, md: 10 },
+                    py: { xs: 10, md: 20 },
                     px: { xs: 3, md: 10 },
                 }}
             >
