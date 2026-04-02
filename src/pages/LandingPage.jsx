@@ -12,6 +12,10 @@ import Testimonials from '../utils/Testimonials';
 import OurTeam from '../components/OurTeam';
 import HeroSection1 from '../utils/HeroSection1';
 import HeroSection2 from '../utils/HeroSection2';
+import ServicesSlide from '../utils/servicesSlide';
+import HeroSection3 from '../utils/HeroSection3';
+import WhyChooseUs from '../utils/WhyChooseUs';
+import ApplicationForm from '../components/ApplicationForm';
 
 
 const slides = [
@@ -41,14 +45,17 @@ const LandingPage = () => {
             {/* <HeroSlider slides={slides} options={{ loop: false }} /> */}
             <div className='p-2'>
 
-                <HeroSection2 />
+                <HeroSection3 />
             </div>
             <AboutSection />
-            <TransformingBusiness />
-            <ServiceSection />
+            <ServicesSlide />
+            <WhyChooseUs />
+            <ApplicationForm />
+            {/* <TransformingBusiness /> */}
+            {/* <ServiceSection /> */}
             {/* <AllServices /> */}
-            <Platforms />
-            <Testimonials />
+            {/* <Platforms /> */}
+            {/* <Testimonials /> */}
             {/* <OurTeam /> */}
             <Footer />
         </Box>

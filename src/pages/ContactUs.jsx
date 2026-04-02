@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, TextField, Button, Typography, Divider } from '@mui/material';
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
+import ApplicationForm from '../components/ApplicationForm.jsx';
 
 const ContactUs = () => {
     return (
@@ -38,7 +39,7 @@ const ContactUs = () => {
                     </Typography>
 
                     <Box component="form" display="flex" flexDirection="column" gap={2}>
-                        <TextField label="Full Name" variant="outlined" fullWidth required />
+                        {/* <TextField label="Full Name" variant="outlined" fullWidth required />
                         <TextField label="Email Address" variant="outlined" type="email" fullWidth required />
                         <TextField label="Phone Number" variant="outlined" type="tel" fullWidth />
                         <TextField label="Company / Organization" variant="outlined" fullWidth />
@@ -66,12 +67,14 @@ const ContactUs = () => {
                             }}
                         >
                             Send Message
-                        </Button>
+                        </Button> */}
+
+                        <ApplicationForm />
                     </Box>
                 </Box>
 
                 {/* Right Section - Image */}
-                <Box
+                {/* <Box
                     flex={1}
                     display="flex"
                     alignItems="center"
@@ -87,7 +90,7 @@ const ContactUs = () => {
                             objectFit: 'cover',
                         }}
                     />
-                </Box>
+                </Box> */}
             </Box>
 
             <Footer />

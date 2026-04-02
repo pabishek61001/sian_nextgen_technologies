@@ -1,463 +1,170 @@
-import React, { useRef } from 'react';
-import { Parallax } from 'react-parallax';
-import {
-    Box,
-    Container,
-    Typography,
-    Grid,
-    Paper,
-    Avatar,
-    Divider,
-    useTheme,
-    Button,
-    Stack,
-    IconButton,
-} from '@mui/material';
+import React from 'react';
+import { Container, Typography, Grid, Box, Paper, Button, alpha, Stack } from '@mui/material';
+import BusinessIcon from '@mui/icons-material/Business';
+import PublicIcon from '@mui/icons-material/Public';
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import Header from '../components/Header';
-import Diversity3Icon from '@mui/icons-material/Diversity3';
-import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
-import { ArrowBack, ArrowForward } from '@mui/icons-material';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
 import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
 
+const AboutUs = () => {
 
+    const navigate = useNavigate();
 
-
-const stats = [
-    { label: 'Years of Excellence', value: '5+' },
-    { label: 'Projects Delivered', value: '150+' },
-    { label: 'Active Clients', value: '50+' },
-    { label: 'Team Members', value: '25+' },
-];
-
-const statIcons = [
-    <EmojiPeopleIcon color="primary" sx={{ fontSize: 40 }} />,
-    <WorkOutlineIcon color="primary" sx={{ fontSize: 40 }} />,
-    <FavoriteIcon color="primary" sx={{ fontSize: 40 }} />,
-    <Diversity3Icon color="primary" sx={{ fontSize: 40 }} />,
-];
-
-const imageSlides = [
-    {
-        imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-        title: 'Innovative Solutions',
-        description: 'Leading the way in tech innovations with expert minds.',
-        buttonText: 'Learn More',
-    },
-    {
-        imageUrl: 'https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=800&q=80',
-        title: 'Global Collaboration',
-        description: 'Connecting teams around the world for success.',
-        buttonText: 'Our Team',
-    },
-    {
-        imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80',
-        title: 'Customer Success',
-        description: 'Delivering impactful results to our clients.',
-        buttonText: 'Contact Us',
-    },
-];
-
-
-const AboutPage = () => {
-    const theme = useTheme();
-    const splideRef = useRef(null);
     return (
-        <Box>
-            <Header />
+        <Box sx={{ bgcolor: '#FFFFFF' }}>
 
-            {/* Hero Section with Fixed Background */}
-            <Box
-                sx={{
-                    height: '90vh',
-                    backgroundImage: `url('https://img.freepik.com/premium-photo/view-modern-business-skyscrapers-glass-sky-view-landscape-commercial-building_39665-83.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740')`,
-                    backgroundAttachment: 'fixed',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    position: 'relative',
-                    color: 'white',
-                    textAlign: 'center',
-                    px: 2,
-                    zIndex: 1,
-                    '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        background: `linear-gradient(180deg, #053d6b, transparent)`,
-                        // backgroundColor: 'rgba(5, 61, 107, 0.5)', // dark overlay
-                        zIndex: -1,
-                    },
-                }}
-            >
-                <Container>
-                    <Typography
-                        variant="h2"
-                        fontWeight="bold"
-                    >
-                        About Us
+            <Header />
+            {/* 1. Hero Section: The Identity */}
+            <Box sx={{
+                background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
+                color: 'white', pt: 15, pb: 20, textAlign: 'center'
+            }}>
+                <Container maxWidth="md">
+                    <Typography variant="overline" sx={{ fontWeight: 800, letterSpacing: 3, color: 'primary.light' }}>
+                        Empowering Digital Evolution
                     </Typography>
-                    <Typography
-                        variant="h6"
-                        mt={3}
-                        maxWidth="600px"
-                        mx="auto"
-                    >
-                        Empowering Businesses with Innovative Solutions
+                    <Typography variant="h2" sx={{ fontWeight: 900, mt: 2, mb: 3, fontSize: { xs: '2.5rem', md: '4rem' } }}>
+                        Sian Next Gen Technologies
+                    </Typography>
+                    <Typography variant="h5" sx={{ fontWeight: 300, opacity: 0.8, lineHeight: 1.6 }}>
+                        A technology powerhouse dedicated to designing, developing, and delivering
+                        modern digital solutions powered by AI, Software, and Data-Driven Intelligence.
                     </Typography>
                 </Container>
             </Box>
 
-
-            {/* Who We Are & Mission */}
-            <Box py={10} bgcolor={theme.palette.background.default}>
-                <Container>
+            {/* 2. Who We Are: The Core Purpose */}
+            <Container maxWidth="lg" sx={{ mt: -8, mb: 12 }}>
+                <Paper elevation={0} sx={{ p: { xs: 4, md: 8 }, borderRadius: 8, border: '1px solid #E2E8F0', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.1)' }}>
                     <Grid container spacing={6} alignItems="center">
-                        <Grid item xs={12} md={6}>
-                            <Typography variant="h4" gutterBottom fontWeight={600}>
-                                Who We Are
+                        <Grid size={{ xs: 12, md: 6 }}>
+                            <Typography variant="h3" sx={{ fontWeight: 800, color: '#0F172A', mb: 3 }}>
+                                Beyond Writing Code — We Craft Solutions.
                             </Typography>
-                            <Typography sx={{ lineHeight: 2 }} variant="body1" component='div' color="text.primary">
-                                Tata Consultancy Services (TCS) (BSE: 532540, NSE: TCS) is a digital transformation and technology partner of choice for industry-leading organizations worldwide. Since its inception in 1968, TCS has upheld the highest standards of innovation, engineering excellence and customer service.
+                            <Typography variant="body1" sx={{ color: '#64748B', lineHeight: 1.8, fontSize: '1.1rem', mb: 3 }}>
+                                We are a technology company focused on the full lifecycle of digital products.
+                                From concept and architecture to deployment and continuous improvement, we manage
+                                the entire ecosystem of modern software.
                             </Typography>
-                            <Typography sx={{ lineHeight: 2 }} variant="body1" component='div' color="text.primary">
-                                Rooted in the heritage of the Tata Group, TCS is focused on creating long term value for its clients, its investors, its employees, and the community at large. With a highly skilled workforce of over 607,000 consultants in 55 countries and 180 service delivery centres across the world, the company has been recognized as a top employer in six continents. With the ability to rapidly apply and scale new technologies, the company has built long term partnerships with its clients – helping them emerge as perpetually adaptive enterprises. Many of these relationships have endured into decades and navigated every technology cycle, from mainframes in the 1970s to Artificial Intelligence today.
-                            </Typography>
-                            <Typography sx={{ lineHeight: 2 }} variant="body1" component='div' color="text.primary">
-                                TCS sponsors 15 of the world’s most prestigious marathons and endurance events, including TCS New York City Marathon, TCS London Marathon and TCS Sydney Marathon with a focus on promoting health, sustainability, and community empowerment. TCS generated consolidated revenues of US $29 billion in the fiscal year ended March 31, 2024.
+                            <Typography variant="body1" sx={{ color: '#64748B', lineHeight: 1.8, fontSize: '1.1rem' }}>
+                                Our expertise spans across **Proprietary Software Products**, **SaaS Platforms**,
+                                and **AI-powered solutions** designed to help organizations improve efficiency,
+                                scalability, and data-backed decision-making.
                             </Typography>
                         </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Typography variant="h4" gutterBottom fontWeight={600}>
-                                Our Mission
-                            </Typography>
-                            <Typography variant="body1" color="text.secondary">
-                                Our mission is to transform businesses with cutting-edge technology and creative strategy. We believe in making digital easy, intuitive, and impactful—built for the present and ready for the future.
-                            </Typography>
+                        <Grid size={{ xs: 12, md: 6 }}>
+                            <Box component="img"
+                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000"
+                                sx={{ width: '100%', borderRadius: 6, boxShadow: 4 }}
+                            />
                         </Grid>
                     </Grid>
+                </Paper>
+            </Container>
+
+            {/* 3. Our Mission: The Driving Force */}
+            <Box sx={{ bgcolor: '#F8FAFC', py: 12 }}>
+                <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
+                    <Typography variant="h3" sx={{ fontWeight: 900, mb: 4 }}>Our Mission</Typography>
+                    <Typography variant="h5" sx={{ maxWidth: 800, mx: 'auto', color: 'primary.main', fontWeight: 600, fontStyle: 'italic', mb: 4 }}>
+                        "To build innovative software, AI-powered technologies, and data-driven platforms
+                        that empower organizations to succeed in an increasingly digital and intelligent world."
+                    </Typography>
+                    <Box sx={{ width: 100, height: 4, bgcolor: 'primary.main', mx: 'auto', borderRadius: 2 }} />
                 </Container>
             </Box>
 
-            {/* our works */}
-            <Box
-                sx={{
-                    position: 'relative',
-                    backgroundImage: 'url(https://img.freepik.com/free-photo/brunette-businesswoman-posing_23-2148142767.jpg?uid=R133306793&ga=GA1.1.1773690977.1730112906&semt=ais_hybrid&w=740)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    color: 'white',
-                    py: 12,
-                    height: 'auto',
-                    textAlign: 'center',
-                    '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: 'rgba(5, 61, 107, 0.9)', // dark overlay
-                        zIndex: 1,
-                    },
-                }}
-            >
-                <Container sx={{ position: 'relative', zIndex: 2, display: "flex", justifyContent: "start", alignItems: "start", flexDirection: "column" }}>
-
-                    <Typography variant="body5" component='div' align='left' mb={4} fontWeight="bold" gutterBottom sx={{ marginLeft: { xs: 1, md: 10 }, pl: 3 }}>
-                        OUR PEOPLE
-                    </Typography>
-
-                    <Stack direction='column' spacing={2} sx={{ borderLeft: "2px solid white", maxWidth: 500, placeSelf: "start", marginLeft: { xs: 1, md: 10 }, pl: 3 }}>
-
-                        <Typography
-                            variant="h3"
-                            maxWidth="md"
-                            align='left'
-                            mb={6}
-                            sx={{ color: 'rgba(255,255,255,0.9)' }}
-                        >
-                            How do you create a remarkable change?
-                        </Typography>
-                        <Typography
-                            variant="h6"
-                            maxWidth="md"
-                            align='left'
-                            mb={6}
-                            sx={{ color: 'rgba(255,255,255,0.9)' }}
-                        >
-                            At TCS, we believe exceptional work begins with hiring, celebrating and nurturing the best people — from all walks of life.
-                        </Typography>
-
-                    </Stack>
-
-                    {/* <Grid container spacing={4} justifyContent="center">
-                        {[
-                            {
-                                icon: <Diversity3Icon fontSize="large" />,
-                                label: 'Inclusive Culture',
-                            },
-                            {
-                                icon: <EmojiPeopleIcon fontSize="large" />,
-                                label: 'Empowered Talent',
-                            },
-                            {
-                                icon: <FavoriteIcon fontSize="large" />,
-                                label: 'Respect & Care',
-                            },
-                            {
-                                icon: <WorkOutlineIcon fontSize="large" />,
-                                label: 'Career Growth',
-                            },
-                        ].map((item, idx) => (
-                            <Grid item xs={6} sm={3} key={idx}>
+            {/* 4. Global Operations & Infrastructure */}
+            <Container maxWidth="lg" sx={{ py: 15 }}>
+                <Grid container spacing={8} alignItems="center">
+                    <Grid size={{ xs: 12, md: 5 }}>
+                        <Stack spacing={4}>
+                            <Box sx={{ display: 'flex' }}>
+                                <PublicIcon sx={{ color: 'primary.main', fontSize: 40, mr: 2 }} />
                                 <Box>
-                                    <Box mb={1} color="primary.light">
-                                        {item.icon}
-                                    </Box>
-                                    <Typography fontWeight={500} color="white">
-                                        {item.label}
+                                    <Typography variant="h6" sx={{ fontWeight: 800 }}>Global Operations</Typography>
+                                    <Typography variant="body2" sx={{ color: '#64748B' }}>
+                                        Operating within India and internationally, delivering digital products
+                                        globally through cloud platforms, APIs, and mobile infrastructure.
                                     </Typography>
                                 </Box>
-                            </Grid>
-                        ))}
-                    </Grid> */}
+                            </Box>
+                            <Box sx={{ display: 'flex' }}>
+                                <BusinessIcon sx={{ color: 'primary.main', fontSize: 40, mr: 2 }} />
+                                <Box>
+                                    <Typography variant="h6" sx={{ fontWeight: 800 }}>Technology Infrastructure</Typography>
+                                    <Typography variant="body2" sx={{ color: '#64748B' }}>
+                                        Secure, scalable, and high-performance solutions delivered via modern
+                                        Cloud computing and AI/ML systems.
+                                    </Typography>
+                                </Box>
+                            </Box>
+                            <Box sx={{ display: 'flex' }}>
+                                <VerifiedUserIcon sx={{ color: 'primary.main', fontSize: 40, mr: 2 }} />
+                                <Box>
+                                    <Typography variant="h6" sx={{ fontWeight: 800 }}>Reliability & Performance</Typography>
+                                    <Typography variant="body2" sx={{ color: '#64748B' }}>
+                                        Continuous maintenance, security enhancements, and system optimization
+                                        built into every proprietary software product we license.
+                                    </Typography>
+                                </Box>
+                            </Box>
+                        </Stack>
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 7 }}>
+                        <Typography variant="h3" sx={{ fontWeight: 900, mb: 4 }}>How We Help Businesses Grow</Typography>
+                        <Grid container spacing={3}>
+                            {[
+                                { title: "Strategic Automation", desc: "Automating repetitive workflows to free up high-value human capital." },
+                                { title: "Data Transformation", desc: "Turning raw, unstructured data into actionable business intelligence." },
+                                { title: "Scalable SaaS", desc: "Building proprietary tools that grow horizontally and vertically with your user base." },
+                                { title: "Consultative Partnership", desc: "Providing end-to-end strategy from discovery to deployment." }
+                            ].map((item, i) => (
+                                <Grid size={{ xs: 12, sm: 6 }} key={i}>
+                                    <Paper elevation={0} sx={{ p: 3, bgcolor: '#F1F5F9', borderRadius: 4, height: '100%' }}>
+                                        <Typography variant="subtitle1" sx={{ fontWeight: 800, mb: 1 }}>{item.title}</Typography>
+                                        <Typography variant="body2" sx={{ color: '#64748B' }}>{item.desc}</Typography>
+                                    </Paper>
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Container>
 
+            {/* 5. Final CTA: Ready to Partner */}
+            <Box sx={{
+                bgcolor: '#0F172A', color: 'white', py: 12, textAlign: 'center',
+                background: 'linear-gradient(45deg, #0F172A 30%, #1E293B 90%)'
+            }}>
+                <Container maxWidth="md">
+                    <Typography variant="h3" sx={{ fontWeight: 900, mb: 4 }}>
+                        Let’s Build Digital Experiences That Work
+                    </Typography>
+                    <Typography variant="body1" sx={{ opacity: 0.8, mb: 6, fontSize: '1.2rem' }}>
+                        Combine technology, intelligence, and precision into solutions that deliver
+                        real business impact. Partner with Sian Next Gen Technologies today.
+                    </Typography>
                     <Button
-                        endIcon={<ArrowForward />}
                         variant="contained"
-                        color="secondary"
-                        sx={{ mt: 5, borderRadius: 2, px: 4, py: 1.5, marginLeft: { xs: 1, md: 10 }, pl: 3 }}
+                        size="large"
+                        onClick={() => navigate('/contact-us')}
+                        startIcon={<RocketLaunchIcon />}
+                        sx={{
+                            px: 6, py: 2, borderRadius: 4, fontWeight: 800, fontSize: '1.1rem',
+                            bgcolor: 'primary.main', '&:hover': { bgcolor: 'primary.dark' }
+                        }}
                     >
-                        Join Us
+                        Schedule a Consultation
                     </Button>
                 </Container>
             </Box>
-
-            <Box py={10} px={3} bgcolor={theme.palette.background.paper}>
-
-                <Grid item sx={{ display: { xs: 'flex', }, justifyContent: 'space-between', alignItems: 'center', width: "100%", mb: 4 }}>
-
-                    <Typography variant="h5" fontWeight="bold">
-                        Get to know us better
-                    </Typography>
-
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            gap: 2,
-                        }}
-                    >
-                        <IconButton
-                            onClick={() => splideRef.current?.splide?.go('<')}
-                            sx={{
-                                backgroundColor: 'rgba(0,0,0,1)',
-                                color: 'white',
-                                '&:hover': { backgroundColor: 'rgba(0,0,0,1)' },
-                            }}
-                        >
-                            <ArrowBack />
-                        </IconButton>
-                        <IconButton
-                            onClick={() => splideRef.current?.splide?.go('>')}
-                            sx={{
-                                backgroundColor: 'rgba(0,0,0,1)',
-                                color: 'white',
-                                '&:hover': { backgroundColor: 'rgba(0,0,0,1)' },
-                            }}
-                        >
-                            <ArrowForward />
-                        </IconButton>
-                    </Box>
-                </Grid>
-                <Splide
-                    ref={splideRef}
-                    options={{
-                        type: 'loop',
-                        perPage: 3,
-                        perMove: 1,
-                        gap: '1rem',
-                        breakpoints: {
-                            2000: { perPage: 4 },
-                            1024: { perPage: 3 },
-                            640: { perPage: 1 },
-                        },
-                        arrows: false,
-                        pagination: true,
-                        autoplay: false,
-                        pauseOnHover: true,
-                    }}
-                    // hasTrack={false}
-                    aria-label="Image carousel with overlay"
-                >
-
-                    {imageSlides.map(({ imageUrl, title, description, buttonText }, idx) => (
-                        <SplideSlide key={idx}>
-                            <Box
-                                sx={{
-                                    position: 'relative',
-                                    height: 450,
-                                    borderRadius: 3,
-                                    overflow: 'hidden',
-                                    cursor: 'pointer',
-                                    boxShadow: 3,
-                                    '&:hover img': {
-                                        transform: 'scale(1.1)',
-                                        transition: 'transform 0.5s ease',
-                                    },
-                                    '&:hover .overlay': {
-                                        backgroundColor: 'rgba(0,0,0,0.55)',
-                                        transition: 'background-color 0.5s ease',
-                                    },
-                                }}
-                            >
-                                {/* Background Image */}
-                                <Box
-                                    component="img"
-                                    src={imageUrl}
-                                    alt={title}
-                                    sx={{
-                                        width: '100%',
-                                        height: '100%',
-                                        objectFit: 'cover',
-                                        transition: 'transform 0.5s ease',
-                                        display: 'block',
-                                    }}
-                                />
-
-                                {/* Overlay with dim background */}
-                                <Box
-                                    className="overlay"
-                                    sx={{
-                                        position: 'absolute',
-                                        top: 0,
-                                        left: 0,
-                                        width: '100%',
-                                        height: '100%',
-                                        bgcolor: 'rgba(0, 0, 0, 0.4)',
-                                        color: 'white',
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        justifyContent: 'flex-end',  // move text & button to bottom
-                                        alignItems: 'start',
-                                        textAlign: 'left',
-                                        px: 3,
-                                        pb: 3, // padding bottom for spacing
-                                    }}
-                                >
-                                    <Typography variant="h5" fontWeight="bold" mb={1}>
-                                        {title}
-                                    </Typography>
-                                    <Typography variant="body2" mb={3} sx={{ maxWidth: 250 }}>
-                                        {description}
-                                    </Typography>
-                                    <Button
-                                        endIcon={<ArrowForward />}
-                                        variant="text"
-
-                                        size="small"
-                                        sx={{ textTransform: 'uppercase', fontWeight: 'bold', color: "white" }}
-                                    >
-                                        {buttonText}
-                                    </Button>
-                                </Box>
-
-                            </Box>
-                        </SplideSlide>
-                    ))}
-
-                </Splide>
-
-            </Box>
-
-            {/* Stats Section */}
-            <Box sx={{ py: 10, bgcolor: "white" }} >
-                <Container>
-                    <Typography variant="h5" color='primary' mb={4} fontWeight="bold" textAlign="left">
-                        Numbers You Should Know
-                    </Typography>
-
-                    <Splide
-                        options={{
-                            type: 'loop',
-                            perPage: 4,
-                            gap: '1.5rem',
-                            breakpoints: {
-                                1024: { perPage: 4 },
-                                640: { perPage: 1 },
-                            },
-                            autoplay: false,
-                            pauseOnHover: true,
-                            arrows: false,
-                            pagination: true,
-                        }}
-                        aria-label="Statistics Carousel"
-                    >
-                        {stats.map((stat, index) => (
-                            <SplideSlide key={index}>
-                                <Paper
-                                    elevation={0}
-                                    sx={{
-                                        height: 350,
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        justifyContent: 'space-between',
-                                        alignItems: 'center',
-                                        px: 3,
-                                        py: 4,
-                                        mb: 4,
-                                        bgcolor: '#f8f8f8',
-                                        borderRadius: 4,
-                                        textAlign: 'center',
-                                    }}
-                                >
-                                    {statIcons[index % statIcons.length]}
-                                    <Typography
-                                        variant="h3"
-                                        fontWeight="bold"
-                                        color="primary"
-                                        mt={2}
-                                    >
-                                        {stat.value}
-                                    </Typography>
-                                    <Divider
-                                        sx={{
-                                            width: 40,
-                                            mx: 'auto',
-                                            my: 2,
-                                            bgcolor: theme.palette.primary.main,
-                                            height: 3,
-                                            borderRadius: 2,
-                                        }}
-                                    />
-                                    <Typography
-                                        variant="subtitle1"
-                                        fontWeight={600}
-                                        color="text.secondary"
-                                    >
-                                        {stat.label}
-                                    </Typography>
-                                    <Typography variant="caption" color="text.secondary" mt={1}>
-                                        {`Delivering impactful results through innovation.`}
-                                    </Typography>
-                                </Paper>
-                            </SplideSlide>
-                        ))}
-                    </Splide>
-                </Container>
-            </Box>
-
 
             <Footer />
         </Box>
     );
 };
 
-export default AboutPage;
+export default AboutUs;

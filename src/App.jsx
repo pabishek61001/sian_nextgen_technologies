@@ -16,6 +16,7 @@ import ContactUs from './pages/ContactUs'
 import Scroller from './components/Scroller'
 import Services from './pages/Services'
 import ServiceDetail from './pages/ServiceDetail'
+import SianNextGen from './pages/rought'
 
 const App = () => {
 
@@ -73,6 +74,7 @@ const App = () => {
           <Route path='why-us' element={<WhyusPage />}></Route>
           <Route path='contact-us' element={<ContactUs />}></Route>
           <Route path="/services/:servicename" element={<ServiceDetail />} />
+          <Route path="/111" element={<SianNextGen />} />
 
           <Route path='*' element={<PageNotfound />}></Route>
 
