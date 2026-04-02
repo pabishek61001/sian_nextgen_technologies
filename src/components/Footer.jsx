@@ -54,7 +54,7 @@ const Footer = () => {
                     {/* Column 1: Brand & Bio */}
                     <Grid size={{ xs: 12, md: 4 }}>
                         <Typography variant="h5" sx={{ fontWeight: "900", mb: 3, letterSpacing: "-1px" }}>
-                            IG<span style={{ color: colors.accentBlue }}> Enterprises</span>
+                            SIAN<span style={{ color: colors.accentBlue }}> NextGen</span>
                         </Typography>
                         <Typography variant="body2" sx={{ color: colors.textMuted, lineHeight: 1.8, mb: 4 }}>
                             Innovating at the intersection of design and technology. We provide high-end full-stack solutions and AI-driven systems to help your corporate brand lead the digital era.
@@ -146,7 +146,7 @@ const Footer = () => {
                     spacing={2}
                 >
                     <Typography variant="caption" sx={{ color: colors.textMuted }}>
-                        © {new Date().getFullYear()} IG Enterprises. All rights reserved.
+                        © {new Date().getFullYear()} Sian NextGen. All rights reserved.
                         {/* <Link href="#" sx={{ ml: 2, color: "inherit", textDecoration: "none" }}>Privacy Policy</Link> */}
                     </Typography>
                     <Typography variant="caption" sx={{ color: colors.textMuted, fontStyle: "italic" }}>
